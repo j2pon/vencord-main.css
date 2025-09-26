@@ -1,0 +1,231 @@
+/* ------------------------------------------------------------
+   Discord-Style Modern Dark Theme (BetterDiscord / Stylus)
+   - Değişkenlerle özelleştirilebilir
+   - Hazreti Murat için hızlı örnek
+   ------------------------------------------------------------ */
+
+/* ========== THEME VARIABLES ========== */
+:root {
+  --accent: #5865f2;             /* ana vurgu rengi (Discord moru gibi) */
+  --bg-0: #0f1115;               /* ana arka plan */
+  --bg-1: #13151a;               /* panel arka planı */
+  --bg-2: #1a1c21;               /* kart/mesaj arka planı */
+  --muted: #9aa3b2;              /* yardımcı metin */
+  --text: #e6edf3;               /* normal metin */
+  --accent-2: rgba(88,101,242,0.12); /* hafif vurgu arkası */
+  --radius: 12px;                /* genel köşe yuvarlaklığı */
+  --glass: 10px;                 /* arka plan blur miktarı */
+  --avatar-ring: 2px;            /* avatar etrafı çizgi */
+}
+
+/* ========== GLOBAL RESET ========== */
+* {
+  box-sizing: border-box;
+  transition: background-color .15s ease, color .12s ease, border-color .12s ease, transform .12s ease;
+}
+
+/* Body / app background */
+.app, .theme-dark {
+  background: linear-gradient(180deg, var(--bg-0) 0%, #0b0c0f 100%) !important;
+  color: var(--text) !important;
+  font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Main container cards, panels */
+.container-2NxA8T, .sidebar-2K8pFh, .contentColumn-2iB9Yh, .appMount-3lHmkl {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.04));
+}
+
+/* Sidebars */
+.sidebar-2K8pFh {
+  backdrop-filter: blur(var(--glass));
+  border-right: 1px solid rgba(255,255,255,0.03);
+  width: 72px !important;
+  padding-top: 12px !important;
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+/* Server icon hover */
+.looks-2BkG7J, .guilds-2OZqjo .container-2sjPya {
+  border-radius: 14px;
+  padding: 4px;
+}
+.guild-1Zf3QF:hover {
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+  transform: translateY(-2px);
+}
+
+/* Channel list */
+.container-2fgA6w {
+  background: transparent !important;
+  border-radius: 14px;
+}
+.channel-2QD9_O:hover, .channel-2QD9_O:focus {
+  background: var(--accent-2) !important;
+  color: var(--text) !important;
+  border-left: 3px solid var(--accent);
+  padding-left: calc(12px - 3px);
+}
+
+/* Top bar / title */
+.title-3qKf9A, .toolbar-1t6TWx {
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(0,0,0,0.03));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Chat area */
+.chat-3bRxxu {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
+  padding: 20px;
+  border-radius: var(--radius);
+}
+
+/* Message bubbles */
+.message-2qnXI6 {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
+  border-radius: 12px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(255,255,255,0.02);
+  box-shadow: 0 6px 20px rgba(2,3,6,0.35);
+}
+
+/* Author / timestamp */
+.header-23xsNx {
+  color: var(--text);
+  font-weight: 600;
+}
+.timestamp-3LrV8T {
+  color: var(--muted);
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* Links and mentions */
+a, .mention-2B9MNB {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+.mention-2B9MNB {
+  background: rgba(88,101,242,0.08);
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+/* Message content */
+.markup-2BOw-j {
+  color: var(--text);
+  line-height: 1.5;
+  font-size: 14.5px;
+}
+
+/* Code blocks */
+.codeBlock-2Vxk9h, pre, code {
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.03);
+  padding: 10px;
+  border-radius: 10px;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 13px;
+  color: #e6edf3;
+}
+
+/* Buttons */
+.button-38aScr {
+  background: linear-gradient(180deg, var(--accent), #4e58e6);
+  color: white !important;
+  border-radius: 10px !important;
+  padding: 6px 10px !important;
+  box-shadow: 0 6px 18px rgba(88,101,242,0.14);
+}
+.button-38aScr:hover {
+  transform: translateY(-2px);
+}
+
+/* Search / inputs */
+.input-2g-os2, .search-2eykUI input {
+  background: rgba(255,255,255,0.02) !important;
+  border: 1px solid rgba(255,255,255,0.03) !important;
+  border-radius: 10px !important;
+  color: var(--text) !important;
+}
+
+/* Member list */
+.members-1998pB {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.03));
+  border-left: 1px solid rgba(255,255,255,0.02);
+  padding: 12px;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+.member-0-0-0 {
+  padding: 6px;
+  border-radius: 8px;
+}
+.member-0-0-0:hover {
+  background: rgba(88,101,242,0.06);
+}
+
+/* Avatar style */
+.avatar-2X9l9R {
+  border-radius: 10px;
+  border: var(--avatar-ring) solid rgba(255,255,255,0.03);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.6);
+}
+
+/* New message / unread accent */
+.unread-1S1Uq5, .badgeUnreads-3sd2yA {
+  background: linear-gradient(90deg, var(--accent), #4e58e6) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  padding: 4px 8px !important;
+}
+
+/* Tooltip */
+.tooltip-2K6rSa {
+  background: rgba(10,12,14,0.9) !important;
+  border: 1px solid rgba(255,255,255,0.04) !important;
+  color: var(--muted) !important;
+  font-size: 12px !important;
+  border-radius: 8px !important;
+}
+
+/* Scrollbars - modern thin */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 900px) {
+  .sidebar-2K8pFh { width: 56px !important; }
+  .chat-3bRxxu { padding: 12px; }
+}
+
+/* ========== OPTIONAL: Accent glow for message author ========== */
+.message-2qnXI6[data-author="you"] {
+  border-left: 4px solid var(--accent);
+  background: linear-gradient(180deg, rgba(88,101,242,0.03), rgba(0,0,0,0.02));
+}
+
+/* ========== DARKNESS ADJUST (example tweak) ========== */
+/* Eğer daha koyu istersen aşağıdaki satırı aç: */
+/* :root { --bg-0: #060608; --bg-1: #09090b; --bg-2: #0e0f11; } */
+
+/* ------------------------------------------------------------
+   Bitti! İstersen:
+    - --accent rengini değiştir (HEX)
+    - --radius veya --glass ile köşe/blur değiştir
+    - avatar/mesaj balonu stillerini daha minimal yapabilirim
+   Kullanım: BetterDiscord / Stylus içinde "yeni tema" -> yapıştır -> kaydet
+   ------------------------------------------------------------ */
